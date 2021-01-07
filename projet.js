@@ -13,30 +13,33 @@ var schema = {
 };
 prompt.start();
 
-prompt.get(schema, function (err, result) {
+prompt.get(schema, function(err, result) {
 
     //
     // Log the results.
     //
+    console.table(grid);
     console.log('Commandes indiquées:');
     console.log('  roverString: ' + result.roverString);
     pilotRover(result.roverString);
     console.log(rover);
+    console.table(grid);
+
 });
 //variable grille 
 
-// var grid = [
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
-//     [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
-// ];
+var grid = [
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+];
 
 // variable rover
 var rover = {
@@ -148,7 +151,11 @@ function pilotRover(roverString) {
         }
 
     };
-
+    return (rover);
+    grid[rover.x][rover.y].splice(rover.direction);
+    return (grid);
 }
+
+
 // pilotRover("rfflffrb");
 // console.log(rover);
