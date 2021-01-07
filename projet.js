@@ -22,49 +22,35 @@ var rover = {
 
 //les functions
 
+//Mars Rover tourne à droite
 function turnRight(rover) {
     if (rover.direction === "N") {
-        rover.direction = "E"
+        rover.direction = "E";
     } else if (rover.direction === "E") {
-        rover.direction = "S"
+        rover.direction = "S";
     } else if (rover.direction === "S") {
-        rover.direction = "W"
+        rover.direction = "W";
     } else {
-        rover.direction = "N"
+        rover.direction = "N";
     }
     return rover;
 }
-/* turnRight(rover);
-console.log(rover);
-turnRight(rover);
-console.log(rover);
-turnRight(rover);
-console.log(rover);
-turnRight(rover);
-console.log(rover); */
 
+//Mars Rover tourne à gauche
 function turnLeft(rover) {
     if (rover.direction === "N") {
-        rover.direction = "W"
+        rover.direction = "W";
     } else if (rover.direction === "W") {
-        rover.direction = "S"
+        rover.direction = "S";
     } else if (rover.direction === "S") {
-        rover.direction = "E"
+        rover.direction = "E";
     } else {
-        rover.direction = "N"
+        rover.direction = "N";
     }
     return rover;
 }
 
-/* turnLeft(rover);
-console.log(rover);
-turnLeft(rover);
-console.log(rover);
-turnLeft(rover);
-console.log(rover);
-turnLeft(rover);
-console.log(rover); */
-
+//Mars Rover bouge d'une case
 function moveForward(rover) {
 
     if (rover.direction === "N") {
@@ -83,7 +69,7 @@ function moveForward(rover) {
         } else { console.log("Le mouvement impossible") }
 
     } else if (rover.direction === "W") {
-        if (rover.x >= 0 && rover.x < 10) {
+        if (rover.x > 0 && rover.x < 10) {
             rover.x--;
         } else { console.log("Le mouvement impossible") }
     }
@@ -91,13 +77,3 @@ function moveForward(rover) {
 }
 
 
-turnRight(rover)
-console.log(rover)
-moveForward(rover)
-console.log(rover)
-moveForward(rover)
-console.log(rover)
-turnLeft(rover)
-console.log(rover)
-moveForward(rover)
-console.log(rover)
