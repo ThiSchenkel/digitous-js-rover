@@ -131,17 +131,18 @@ function pilotRover(roverString) {
     for (var i = 0; i < roverString.length; i++) {
         if (roverString[i] === "r") {
             turnRight(rover);
-            rover.travelLog.push("Je tourne à droite");
+            rover.travelLog.push(`Je tourne à droite ${rover.direction}`);
         } else if (roverString[i] === "l") {
             turnLeft(rover);
-            rover.travelLog.push("Je tourne à gauche");
+            rover.travelLog.push(`Je tourne à gauche ${rover.direction}`);
         } else if (roverString[i] === "f") {
             moveForward(rover);
-            rover.travelLog.push("Je bouge d'une case");
+            rover.travelLog.push(` Je bouge d'une case, x =${rover.x} et y = ${rover.y}`);
         } else if (roverString[i] === "b") {
             moveBackward(rover);
-            rover.travelLog.push("Je recule d'une case");
+            rover.travelLog.push(`Je recule d'une case, x =${rover.x} et y = ${rover.y}`);
         }
+
     };
 
 }
