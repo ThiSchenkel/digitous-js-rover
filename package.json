@@ -1,0 +1,22 @@
+{
+  "name": "digitous-js-rover",
+  "version": "1.0.0",
+  "description": "mars rover",
+  "main": "projet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deotyma/digitous-js-rover.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deotyma/digitous-js-rover/issues"
+  },
+  "homepage": "https://github.com/Deotyma/digitous-js-rover#readme",
+  "dependencies": {
+    "prompt": "^1.1.0"
+  }
+}
