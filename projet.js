@@ -4,20 +4,24 @@ var prompt = require('prompt');
 var schema = {
     properties: {
         roverString: {
+            description: `Tourner à gauche => "l" , tourner à droite => "r", avancer d'une case => "f" ou reculer => "b"`,
             pattern: /^[lrbf]+$/,
-            message: 'Pour tourner à droite ',
+            message: 'Commande incorrecte, essayez encore une fois ',
             required: true
         },
     }
 };
 prompt.start();
 
-prompt.get(schema, function(err, result) {
+prompt.get(schema, function (err, result) {
+
     //
     // Log the results.
     //
-    console.log('Command-line input received:');
+    console.log('Commandes indiquées:');
     console.log('  roverString: ' + result.roverString);
+    pilotRover(result.roverString);
+    console.log(rover);
 });
 //variable grille 
 
@@ -146,7 +150,5 @@ function pilotRover(roverString) {
     };
 
 }
-
-
-pilotRover("rfflffrb");
-console.log(rover);
+// pilotRover("rfflffrb");
+// console.log(rover);
