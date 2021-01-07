@@ -13,11 +13,7 @@ var schema = {
 };
 prompt.start();
 
-prompt.get(schema, function(err, result) {
-
-    //
-    // Log the results.
-    //
+prompt.get(schema, function (err, result) {
     console.table(grid);
     console.log('Commandes indiquées:');
     console.log('  roverString: ' + result.roverString);
@@ -81,7 +77,6 @@ function turnLeft(rover) {
 
 //Mars Rover bouge d'une case
 function moveForward(rover) {
-
     if (rover.direction === "N") {
         if (rover.y > 0 && rover.y < 10) {
             rover.y--;
@@ -149,13 +144,10 @@ function pilotRover(roverString) {
             moveBackward(rover);
             rover.travelLog.push(`Je recule d'une case, x =${rover.x} et y = ${rover.y}`);
         }
-
     };
-    return (rover);
-    grid[rover.x][rover.y].splice(rover.direction);
+    grid[rover.x][rover.y].slice(rover.direction);
     return (grid);
 }
-
 
 // pilotRover("rfflffrb");
 // console.log(rover);
