@@ -14,12 +14,12 @@ var schema = {
 prompt.start();
 
 prompt.get(schema, function (err, result) {
-    console.table(grid);
+    console.log(grid.join("\n"));
     console.log('Commandes indiquées:');
     console.log('  roverString: ' + result.roverString);
     pilotRover(result.roverString);
     console.log(rover);
-    console.table(grid);
+    console.table(grid.join("\n"));
 
 });
 //variable grille 
@@ -77,6 +77,7 @@ function turnLeft(rover) {
 
 //Mars Rover bouge d'une case
 function moveForward(rover) {
+    grid[rover.y][rover.x] = " ";
     if (rover.direction === "N") {
         if (rover.y > 0 && rover.y < 10) {
             rover.y--;
@@ -98,6 +99,7 @@ function moveForward(rover) {
         } else { console.log("Le mouvement impossible"); }
     };
     // return rover;
+    grid[rover.y][rover.x] = rover.direction;
 }
 
 //Mars Rover recule 
@@ -139,10 +141,10 @@ function pilotRover(roverString) {
             rover.travelLog.push(`Je tourne à gauche ${rover.direction}`);
         } else if (roverString[i] === "f") {
             moveForward(rover);
-            rover.travelLog.push(` Je bouge d'une case, x =${rover.x} et y = ${rover.y}`);
+            rover.travelLog.push(` Je bouge d'une case, x = ${rover.x} et y = ${rover.y}`);
         } else if (roverString[i] === "b") {
             moveBackward(rover);
-            rover.travelLog.push(`Je recule d'une case, x =${rover.x} et y = ${rover.y}`);
+            rover.travelLog.push(`Je recule d'une case, x = ${rover.x} et y = ${rover.y}`);
         }
     };
     grid[rover.x][rover.y].slice(rover.direction);
